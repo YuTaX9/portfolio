@@ -440,6 +440,42 @@ body.dark {
   gap: 1rem;
 }
 
+/* Style all links */
+a {
+  color: var(--accent); /* link color */
+  text-decoration: none; /* remove underline */
+  transition: color 0.3s, text-decoration 0.3s; /* smooth hover effect */
+}
+
+a:hover {
+  color: #f59e0b; /* different color on hover */
+  text-decoration: underline; /* underline appears on hover */
+}
+
+.nav-links a {
+  color: var(--muted);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+  background: var(--glass);
+  color: var(--accent); /* changes color on hover */
+}
+
+.project-actions .link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.project-actions .link:hover {
+  color: #fbbf24;
+  transform: translateY(-2px); /* small hover movement */
+}
+
 /* footer */
 .footer {
   padding: 1rem 0;

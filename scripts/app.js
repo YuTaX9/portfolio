@@ -20,9 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.getElementById("contactForm");
   const formStatus = document.getElementById("formStatus");
 
-  // fill year
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
   // theme: check localStorage
   const savedTheme = localStorage.getItem("theme") || "light";
   body.classList.remove("light", "dark");
