@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("projectModal");
   const modalTitle = document.getElementById("modalTitle");
   const modalDesc = document.getElementById("modalDesc");
-  const modalLink = document.getElementById("modalLink"); // No need for this
+  const modalLink = document.getElementById("modalLink");
   const closeModal = document.getElementById("closeModal");
   const contactForm = document.getElementById("contactForm");
   const formStatus = document.getElementById("formStatus");
@@ -28,12 +28,24 @@ document.addEventListener("DOMContentLoaded", () => {
   body.classList.remove("light", "dark");
   body.classList.add(savedTheme);
 
+  // for the color
   themeToggle?.addEventListener("click", () => {
     const current = body.classList.contains("dark") ? "dark" : "light";
     const next = current === "dark" ? "light" : "dark";
     body.classList.remove("dark", "light");
     body.classList.add(next);
     localStorage.setItem("theme", next);
+  });
+
+  // for the icon
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+
+    if (document.body.classList.contains("dark-theme")) {
+      themeToggle.textContent = "🌞";
+    } else {
+      themeToggle.textContent = "🌙";
+    }
   });
 
   // mobile menu
@@ -81,6 +93,29 @@ document.addEventListener("DOMContentLoaded", () => {
   modal?.addEventListener("click", (e) => {
     if (e.target === modal) modal.setAttribute("aria-hidden", "true");
   });
+
+  /* Timeline reveal using IntersectionObserver */
+  const timelineItems = document.querySelectorAll(".timeline-item");
+
+  if ("IntersectionObserver" in window && timelineItems.length) {
+    const tlObserver = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            // unobserve if you want the animation only once
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { root: null, rootMargin: "0px 0px -10% 0px", threshold: 0.12 }
+    );
+
+    timelineItems.forEach((item) => tlObserver.observe(item));
+  } else {
+    // fallback: if browser doesn't support IntersectionObserver, show all
+    timelineItems.forEach((i) => i.classList.add("in-view"));
+  }
 
   // basic form UX & validation (for user feedback)
   contactForm?.addEventListener("submit", (e) => {
