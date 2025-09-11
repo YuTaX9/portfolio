@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bassam Alghamdi — Portfolio</title>
+    <meta name="description" content="Personal portfolio of Bassam Alghamdi — projects, skills and contact." />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Pre-connect improves performance by preparing the connection to the server before the request. -->
+</head>
+
+<body class="light">
+    <!-- NAV -->
+    <header class="nav">
+        <div class="container nav-inner">
+            <a href="#hero" class="logo">Bassam<span>Alghamdi</span></a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="themeToggle" aria-label="Toggle theme">🌓</button>
+                <button id="menuBtn" class="hamburger" aria-label="Open menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Hi — I’m <span class="accent">Bassam Alghamdi</span></h1>
+                <p class="lead">AI-Driven Software Developer • Full-stack Developer • Building intelligent and seamless
+                    user experiences</p>
+                <div class="hero-ctas">
+                    <a class="btn" href="#projects">See my work</a>
+                    <a class="btn ghost" href="#contact">Contact me</a>
+                </div>
+                <ul class="skills">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Flask</li>
+                    <li>Python</li>
+                    <li>Power BI</li>
+                    <li>NoSQL</li>
+                    <li>PostgreSQL</li>
+                </ul>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="card floating">
+                    <img src="assets/profile-placeholder.jpg" alt="Profile photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div>
+                    <p>
+                        I’m <strong>Bassam Alghamdi</strong>, "I'm a Computer Science graduate who thrives on
+                        integrating AI, web development,
+                        and interactive design to create impactful applications. My projects range from a secure mental
+                        health web platform to a VR-based conversational AI system,
+                        and I have experience collaborating with teams to improve internal processes and user
+                        satisfaction.
+                    </p>
+                    <p>
+                        Goals: Expand expertise in AI and machine learning frameworks, focusing on real-time
+                        applications and their integration into user-facing platforms.
+                    </p>
+                    <p> My dream is to have a Yamaha R7 motorcycle🏍️.</p>
+                    <a class="btn" href="#contact">Work with me</a>
+                </div>
+                <div class="about-stats">
+                    <div class="stat"><span>5+</span><small>Years learning</small></div>
+                    <div class="stat"><span>4+</span><small>Practice projects</small></div>
+                    <div class="stat"><span>10+</span><small>Corses</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <p class="muted">A mix of practice & real work — click to view details.</p>
+
+            <div class="projects-grid">
+                <!-- Project card -->
+                <article class="project-card" data-title="Mindspace —  AI-Powered Mental Health Platform" data-desc="A secure web application for university students, featuring an 
+        AI recommendation engine that improved resource matching by 40%. Developed using 
+        Flask and Firebase, the platform prioritized data privacy and achieved high uptime during testing.">
+                    <img src="assets/project1.jpg" alt="Project 1 screenshot">
+                    <div class="project-body">
+                        <h3>Mindspace</h3>
+                        <p class="muted">AI-assisted for mental health</p>
+                        <div class="project-actions">
+                            <button class="btn small viewBtn">View</button>
+                            <a class="link" href="https://github.com/YuTaX9/Mindspace" aria-disabled="true">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-title="Calculator Website App"
+                    data-desc="A simple calculator with basic arithmetic functions built using vanilla JavaScript and HTML and CSS.">
+                    <img src="assets/project2.jpg" alt="Project 2 screenshot">
+                    <div class="project-body">
+                        <h3>Calculator</h3>
+                        <p class="muted">JS practice</p>
+                        <div class="project-actions">
+                            <button class="btn small viewBtn">View</button>
+                            <a class="link"
+                                href="https://git.generalassemb.ly/yutax9/HOMEWORK/tree/main/DOM-events-lab">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-title="Speak Easy - Learning Platform" data-desc="A VR-based English language platform with real-time conversational AI feedback.
+        We integrated a Flask backend with AI APIs and a React frontend for seamless interaction.
+        The system used a NoSQL database for scalable data storage.">
+                    <img src="assets/project3.jpg" alt="Project 3 screenshot">
+                    <div class="project-body">
+                        <h3>Speak Easy</h3>
+                        <p class="muted">Learning</p>
+                        <div class="project-actions">
+                            <button class="btn small viewBtn">View</button>
+                            <a class="link" href="https://github.com/YuTaX9/graduation-project">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Project modal -->
+        <div id="projectModal" class="modal" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <button id="closeModal" class="modal-close" aria-label="Close">✕</button>
+                <h3 id="modalTitle">Project Title</h3>
+                <p id="modalDesc">Project description goes here.</p>
+                <div class="modal-footer">
+                    <a id="modalLink" class="btn" href="#">Close</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p>Want to collaborate or hire me? Drop a message.</p>
+                    <ul class="contact-list">
+                        <li>Email: <a href="mailto:bassam.ghk@gmail.com">bassam.ghk@gmail.com</a></li>
+                        <li>LinkedIn: <a href="https://www.linkedin.com/in/bassam-alghamdi-42594028a/"
+                                target="_blank">Bassam Alghamdi</a></li>
+                        <li>GitHub: <a href="https://github.com/YuTaX9" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+
+                <form id="contactForm" class="contact-form" method="POST" action="https://getform.io/f/anlnkpna">
+                    <label>
+                        <span>Name</span>
+                        <input type="text" name="name" id="name" required minlength="2">
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email" id="email" required>
+                    </label>
+                    <label>
+                        <span>Message</span>
+                        <textarea name="message" id="message" rows="6" required minlength="10"></textarea>
+                    </label>
+                    <div class="form-row">
+                        <button type="submit" class="btn">Send message</button>
+                        <div id="formStatus" class="muted"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© <span id="year"></span> Bassam Alghamdi — Built with ❤️ of • HTML • CSS • JS</p>
+        </div>
+    </footer>
+
+    <script src="./scripts/app.js"></script> <!--  many of people prefer to put script tag here  -->
+</body>
+
+</html>
+
+<!-- References for HTML -->
+
+<!-- MDN Web Docs — HTML Basics
+     https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics
+     → Learned basic HTML structure and semantic elements like <section>, <nav>, <header>, <footer>. -->
+
+<!-- MDN — <form> element
+     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+     → Learned how to build forms and use attributes like name, action, method, required. -->
+
+<!-- W3Schools — Semantic HTML
+     https://www.w3schools.com/html/html5_semantic_elements.asp
+     → Learned why using semantic sections like <section> and <article> is important. -->
+
+<!-- Getform Documentation
+     https://getform.io/docs
+     → Learned how to integrate a working contact form with an API. -->
