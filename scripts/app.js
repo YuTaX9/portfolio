@@ -20,6 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.getElementById("contactForm");
   const formStatus = document.getElementById("formStatus");
 
+  // fill year
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /**
+   * savedTheme(theme) & themeToggle
+   * - Updates CSS variables to match the selected theme
+   * - Saves the choice to localStorage
+   * - Changes the toggle button icon
+   */
   // theme: check localStorage
   const savedTheme = localStorage.getItem("theme") || "light";
   body.classList.remove("light", "dark");

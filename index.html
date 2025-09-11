@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 
+<!-- ================= HEADER & NAVIGATION ================= -->
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -23,13 +25,14 @@
                 <a href="#contact">Contact</a>
             </nav>
             <div class="nav-actions">
+                <!-- Theme toggle button -->
                 <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
                 <button id="menuBtn" class="hamburger" aria-label="Open menu">☰</button>
             </div>
         </div>
     </header>
 
-    <!-- HERO -->
+    <!-- ================= HERO SECTION ================= -->
     <section id="hero" class="hero">
         <div class="container hero-grid">
             <div class="hero-text">
@@ -61,7 +64,7 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ================= ABOUT SECTION ================= -->
     <section id="about" class="section about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
@@ -91,7 +94,7 @@
         </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- ================= PROJECTS SECTION ================= -->
     <section id="projects" class="section projects">
         <div class="container">
             <h2 class="section-title">Projects</h2>
@@ -143,7 +146,7 @@
             </div>
         </div>
 
-        <!-- Project modal -->
+        <!-- ================= PROJECTS SECTION ================= -->
         <div id="projectModal" class="modal" role="dialog" aria-hidden="true">
             <div class="modal-content">
                 <button id="closeModal" class="modal-close" aria-label="Close">✕</button>
@@ -156,7 +159,7 @@
         </div>
     </section>
 
-    <!-- TIMELINE -->
+    <!-- ================= TIMELINE ================= -->
     <section id="timeline" class="section timeline">
         <div class="container">
             <h2 class="section-title">Timeline</h2>
@@ -175,7 +178,7 @@
 
                 <li class="timeline-item" data-year="2024">
                     <h3>AI & Data Science Learning</h3>
-                    <p>Took multiple courses in Artificial Intelligence and Data Science to strengthen my skills.</p>
+                    <p>Took multiple Courses in Artificial Intelligence and Data Science to strengthen my skills.</p>
                 </li>
 
                 <li class="timeline-item" data-year="2025">
@@ -186,7 +189,7 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ================= CONTACT SECTION ================= -->
     <section id="contact" class="section contact">
         <div class="container">
             <h2 class="section-title">Contact</h2>
@@ -200,7 +203,7 @@
                         <li>GitHub: <a href="https://github.com/YuTaX9" target="_blank">GitHub</a></li>
                     </ul>
                 </div>
-
+                <!-- Contact Form (sends message via EmailJS) -->
                 <form id="contactForm" class="contact-form" method="POST" action="https://getform.io/f/anlnkpna">
                     <label>
                         <span>Name</span>
@@ -222,7 +225,7 @@
             </div>
         </div>
     </section>
-
+    <!-- ================= FOOTER ================= -->
     <footer class="footer">
         <div class="container">
             <p>© <span id="year"></span> Bassam Alghamdi — Crafted with code 👾 and coffee ☕</p>

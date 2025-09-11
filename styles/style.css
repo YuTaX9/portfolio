@@ -1,3 +1,4 @@
+/* ================= GLOBAL STYLES ================= */
 :root {
   --bg: #0f1724; /* dark bg for dark mode */
   --surface: #0b1220;
@@ -72,7 +73,7 @@ body.dark {
   padding: 1rem;
 }
 
-/* NAV */
+/* ================= NAVBAR ================= */
 .nav {
   position: sticky;
   top: 0;
@@ -118,7 +119,7 @@ body.dark {
   font-size: 1.2rem;
 }
 
-/* HERO */
+/* ================= HERO SECTION ================= */
 .hero {
   padding: 3rem 0;
 }
@@ -235,7 +236,7 @@ body.dark {
   color: var(--muted);
 }
 
-/* ABOUT */
+/* ================= ABOUT SECTION ================= */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 220px;
@@ -262,7 +263,7 @@ body.dark {
   color: var(--muted);
 }
 
-/* PROJECTS */
+/* ================= PROJECTS SECTION ================= */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -297,7 +298,7 @@ body.dark {
   gap: 0.5rem;
 }
 
-/* modal */
+/* ================= MODAL ================= */
 .modal {
   position: fixed;
   inset: 0;
@@ -312,6 +313,7 @@ body.dark {
 .modal[aria-hidden="false"] {
   opacity: 1;
   pointer-events: auto;
+  z-index: 1;
 }
 .modal-content {
   background: var(--card);
@@ -415,7 +417,7 @@ body.dark {
   }
 }
 
-/* CONTACT */
+/* ================= CONTACT SECTION ================= */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 480px;
@@ -476,7 +478,7 @@ a:hover {
   transform: translateY(-2px); /* small hover movement */
 }
 
-/* footer */
+/* ================= FOOTER ================= */
 .footer {
   padding: 1rem 0;
   margin-top: 2rem;
