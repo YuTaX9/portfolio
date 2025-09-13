@@ -2,13 +2,13 @@
 :root {
   --bg: #0f1724; /* dark bg for dark mode */
   --surface: #0b1220;
-  --muted: #9aa4b2;
+  --muted: #9fb29a;
   --accent: #6ee7b7;
   --glass: rgba(255, 255, 255, 0.04);
   --card: #0b1220;
   --light-bg: #f6f8fb;
   --light-surface: #ffffff;
-  --text-dark: #0b1220;
+  --text-dark: #dbeafe;
   --fw-regular: 400;
   --fw-strong: 700;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
@@ -23,28 +23,27 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  height: 100%;
-}
-body {
   margin: 0;
   background: var(--light-bg);
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background 0.35s ease, color 0.35s ease;
+  font-family: system-ui, sans-serif;
+  transition: background 0.3s, color 0.3s;
   font-size: 16px;
   line-height: 1.5;
+  height: 100%;
+  padding: 0 1rem;
 }
 
 /* theme light/dark */
 body.light {
-  --bg: var(--light-bg);
+  background: var(--bg-light);
+  color: var(--text-light);
   --surface: var(--light-surface);
-  --muted: #6b7280;
   --accent: #0ea5a4;
   --glass: rgba(2, 6, 23, 0.03);
   --card: linear-gradient(180deg, #fff, #fbfdff);
-  --text-dark: #0b1220;
 }
 body.dark {
   background: linear-gradient(180deg, #041221, #071726);
@@ -55,6 +54,7 @@ body.dark {
 }
 
 .theme-toggle {
+  position: fixed;
   font-size: 1.6rem;
   background: none;
   border: none;
@@ -159,7 +159,7 @@ body.dark {
   padding: 0.35rem 0.6rem;
   font-size: 0.9rem;
 }
-.download-btn {
+.linkedin-btn {
   padding: 0.7rem 1.5rem;
   border: 2px solid var(--accent);
   background: transparent;
@@ -169,7 +169,7 @@ body.dark {
   transition: all 0.3s ease;
 }
 
-.download-btn:hover {
+.linkedin-btn:hover {
   background: var(--accent);
   color: #fff;
   transform: translateY(-2px);
@@ -196,8 +196,8 @@ body.dark {
 
 /* hero visual */
 .hero-visual .card {
-  width: 320px;
-  height: 320px;
+  width: 220px;
+  height: 220px;
   background: var(--card);
   border-radius: 18px;
   display: flex;
@@ -207,12 +207,12 @@ body.dark {
   box-shadow: 0 10px 30px rgba(2, 6, 23, 0.4);
 }
 .hero-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
 }
 .floating {
-  animation: float 6s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 @keyframes float {
   0% {
@@ -286,7 +286,7 @@ body.dark {
 }
 .project-card img {
   width: 100%;
-  height: 160px;
+  height: 150px;
   object-fit: cover;
   display: block;
 }
@@ -324,6 +324,7 @@ body.dark {
   max-width: 600px;
   width: 95%;
   position: relative;
+  text-align: center;
 }
 .modal-close {
   position: absolute;
@@ -446,14 +447,13 @@ body.dark {
 
 /* Style all links */
 a {
-  color: var(--accent); /* link color */
-  text-decoration: none; /* remove underline */
+  color: var(--accent);
+  text-decoration: none;
   transition: color 0.3s, text-decoration 0.3s; /* smooth hover effect */
 }
 
 a:hover {
-  color: #f59e0b; /* different color on hover */
-  text-decoration: underline; /* underline appears on hover */
+  color: #f59e0b;
 }
 
 .nav-links a {
@@ -506,6 +506,7 @@ a:hover {
   }
   .hamburger {
     display: inline-block;
+    border-radius: 1rem;
   }
   .nav-links {
     display: none;
@@ -552,3 +553,12 @@ a:hover {
 /* Coolors — Color Palette Generator
    https://coolors.co/ 
    → Helped me choose and organize the website’s color palette. */
+
+/* CSS Styling Buttons
+   https://www.w3schools.com/css/css3_buttons.asp
+  → helped me how can i padding the buttons */
+
+/* Note: In addition to the mentioned sources,
+   I also used code and ideas from my previous projects stored on my device (HTML, CSS, JS).
+   These projects were never published before, but they helped me speed up the work
+   and reuse some parts I had tried earlier.*/

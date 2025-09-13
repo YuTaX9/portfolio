@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("projectModal");
   const modalTitle = document.getElementById("modalTitle");
   const modalDesc = document.getElementById("modalDesc");
-  const modalLink = document.getElementById("modalLink");
   const closeModal = document.getElementById("closeModal");
   const contactForm = document.getElementById("contactForm");
   const formStatus = document.getElementById("formStatus");
@@ -30,29 +29,27 @@ document.addEventListener("DOMContentLoaded", () => {
    * - Changes the toggle button icon
    */
   // theme: check localStorage
-  const savedTheme = localStorage.getItem("theme") || "light";
-  body.classList.remove("light", "dark");
-  body.classList.add(savedTheme);
+  // ===== Theme Toggle =====
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    body.classList.add(savedTheme);
+    themeToggle.textContent = savedTheme === "dark" ? "🌞" : "🌙";
+  } else {
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    const defaultTheme = prefersDark ? "dark" : "light";
+    body.classList.add(defaultTheme);
+    themeToggle.textContent = defaultTheme === "dark" ? "🌞" : "🌙";
+  }
 
-  // for the color
   themeToggle?.addEventListener("click", () => {
     const current = body.classList.contains("dark") ? "dark" : "light";
     const next = current === "dark" ? "light" : "dark";
     body.classList.remove("dark", "light");
     body.classList.add(next);
     localStorage.setItem("theme", next);
-    themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark-theme");
-    });
-  });
-
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-
-    // تحديث الأيقونة مع التغيير
-    themeToggle.textContent = document.body.classList.contains("dark-theme")
-      ? "🌞"
-      : "🌙";
+    themeToggle.textContent = next === "dark" ? "🌞" : "🌙";
   });
 
   // mobile menu
@@ -85,19 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // modal link close
-  modalLink?.addEventListener("click", (e) => {
-    e.preventDefault();
-    modal.setAttribute("aria-hidden", "true");
-  });
-
+  // modal close
   closeModal?.addEventListener("click", () => {
     modal.setAttribute("aria-hidden", "true");
-  });
-
-  // close modal on background click
-  modal?.addEventListener("click", (e) => {
-    if (e.target === modal) modal.setAttribute("aria-hidden", "true");
   });
 
   /* Timeline reveal using IntersectionObserver */
@@ -123,26 +110,9 @@ document.addEventListener("DOMContentLoaded", () => {
     timelineItems.forEach((i) => i.classList.add("in-view"));
   }
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
-      modal.setAttribute("aria-hidden", "true");
-    }
-  });
-
   // basic form UX & validation (for user feedback)
   contactForm?.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    // simple front-end checks
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    if (name.length < 2 || message.length < 10 || !email.includes("@")) {
-      formStatus.textContent =
-        "Please complete the form properly (name ≥2, message ≥10 chars).";
-      return;
-    }
 
     // disable form while sending
     const submitBtn = contactForm.querySelector('button[type="submit"]');
@@ -162,15 +132,18 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((res) => {
         if (res.ok) {
           formStatus.textContent = "Message sent — thanks!";
+          formStatus.style.color = "green";
           contactForm.reset();
         } else {
           formStatus.textContent =
             "Submission failed. Try emailing me directly.";
+          formStatus.style.color = "red";
         }
       })
       .catch((err) => {
         console.error(err);
         formStatus.textContent = "Network error. Try again later.";
+        formStatus.style.color = "red";
       })
       .finally(() => {
         submitBtn.disabled = false;
@@ -197,8 +170,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // MDN — Fetch API
 // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-// → Used to send form data to an endpoint like Getform.
+// also this web
+// https://stackoverflow.com/questions/48841097/receive-and-process-json-using-fetch-api-in-javascript
+// → Used to send form JSON data to an endpoint like Getform.
 
 // MDN — FormData
 // https://developer.mozilla.org/en-US/docs/Web/API/FormData
 // → Used to easily create form data for submission via Fetch.
+
+// Note: In addition to the mentioned sources,
+// I also used code and ideas from my previous projects stored on my device (HTML, CSS, JS).
+// These projects were never published before, but they helped me speed up the work
+// and reuse some parts I had tried earlier.
