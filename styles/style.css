@@ -40,6 +40,7 @@ body {
 body.light {
   background: var(--bg-light);
   color: var(--text-light);
+  --muted: #9aa4b2;
   --surface: var(--light-surface);
   --accent: #0ea5a4;
   --glass: rgba(2, 6, 23, 0.03);

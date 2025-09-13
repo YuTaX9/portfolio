@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.getElementById("navLinks");
   const yearEl = document.getElementById("year");
   const viewBtns = document.querySelectorAll(".viewBtn");
-  const modal = document.getElementById("projectModal");
+  const projectModal = document.getElementById("projectModal");
   const modalTitle = document.getElementById("modalTitle");
   const modalDesc = document.getElementById("modalDesc");
   const closeModal = document.getElementById("closeModal");
@@ -78,13 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const desc = card.dataset.desc || "No description provided.";
       modalTitle.textContent = title;
       modalDesc.textContent = desc;
-      modal.setAttribute("aria-hidden", "false");
+      projectModal.setAttribute("aria-hidden", "false");
     });
   });
 
   // modal close
   closeModal?.addEventListener("click", () => {
-    modal.setAttribute("aria-hidden", "true");
+    projectModal.setAttribute("aria-hidden", "true");
   });
 
   /* Timeline reveal using IntersectionObserver */
