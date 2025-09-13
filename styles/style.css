@@ -19,7 +19,9 @@
 * {
   box-sizing: border-box;
 }
-html,
+html {
+  scroll-behavior: smooth;
+}
 body {
   height: 100%;
 }
@@ -279,8 +281,8 @@ body.dark {
   box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
 }
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(2, 6, 23, 0.12);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(2, 6, 23, 0.15);
 }
 .project-card img {
   width: 100%;

@@ -41,17 +41,18 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.remove("dark", "light");
     body.classList.add(next);
     localStorage.setItem("theme", next);
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-theme");
+    });
   });
 
-  // for the icon
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 
-    if (document.body.classList.contains("dark-theme")) {
-      themeToggle.textContent = "🌞";
-    } else {
-      themeToggle.textContent = "🌙";
-    }
+    // تحديث الأيقونة مع التغيير
+    themeToggle.textContent = document.body.classList.contains("dark-theme")
+      ? "🌞"
+      : "🌙";
   });
 
   // mobile menu
@@ -80,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const desc = card.dataset.desc || "No description provided.";
       modalTitle.textContent = title;
       modalDesc.textContent = desc;
-      modalLink.href = "#"; // No need for this
       modal.setAttribute("aria-hidden", "false");
     });
   });
@@ -122,6 +122,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // fallback: if browser doesn't support IntersectionObserver, show all
     timelineItems.forEach((i) => i.classList.add("in-view"));
   }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
+      modal.setAttribute("aria-hidden", "true");
+    }
+  });
 
   // basic form UX & validation (for user feedback)
   contactForm?.addEventListener("submit", (e) => {
