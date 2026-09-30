@@ -87,6 +87,18 @@ document.addEventListener("DOMContentLoaded", () => {
     projectModal.setAttribute("aria-hidden", "true");
   });
 
+  projectModal?.addEventListener("click", (e) => {
+    if (e.target === projectModal) {
+      projectModal.setAttribute("aria-hidden", "true");
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && projectModal?.getAttribute("aria-hidden") === "false") {
+      projectModal.setAttribute("aria-hidden", "true");
+    }
+  });
+
   /* Timeline reveal using IntersectionObserver */
   const timelineItems = document.querySelectorAll(".timeline-item");
 
