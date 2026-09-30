@@ -1,587 +1,612 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en">
+<html lang="en" dir="ltr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- SEO Meta Tags -->
-    <title>Bassam Alghamdi — Full-Stack Developer & Software Engineer</title>
-    <meta name="description" content="Full-Stack Developer | Software Engineer | AI Enthusiast | Data Engineering | OTA Automation | CDMP Certified">
-    <meta name="keywords" content="Full-Stack Developer, Software Engineer, AI, Data Engineering, Python, JavaScript, React, Django, Power BI">
+    <title>Bassam Alghamdi | Computer Science & Data Analytics</title>
+    <meta name="description" content="Portfolio of Bassam Alghamdi - Computer Science Graduate, CDMP Certified, Data Engineering & Full-Stack Developer specializing in OTA Automation and BI Solutions.">
+    <meta name="keywords" content="Bassam Alghamdi, Data Engineer, Full-Stack Developer, CDMP, OTA Automation, Python, SQL, Power BI, Jeddah, Saudi Arabia">
     <meta name="author" content="Bassam Alghamdi">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Social Media Tags -->
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Bassam Alghamdi | Computer Science & Data Analytics Portfolio">
+    <meta property="og:description" content="Explore projects, skills, and professional experience in Full-Stack Web Development, Data Engineering, and Process Automation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yutax9.github.io/portfolio/">
-    <meta property="og:title" content="Bassam Alghamdi — Full-Stack Developer & Software Engineer">
-    <meta property="og:description" content="Showcasing projects, skills, and professional experience">
-    <meta property="og:image" content="https://yutax9.github.io/portfolio/assets/profile-placeholder.jpg">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:locale:alternate" content="ar_SA">
-    
-    <!-- Twitter Card -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://yutax9.github.io/portfolio/">
-    <meta property="twitter:title" content="Bassam Alghamdi — Full-Stack Developer & Software Engineer">
-    <meta property="twitter:description" content="Showcasing projects, skills, and professional experience">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://yutax9.github.io/portfolio/">
-    
-    <!-- Preconnect to Google Fonts -->
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Readex Pro', 'sans-serif'],
+                        arabic: ['Readex Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Inter & Readex Pro for Seamless Bilingual Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Google Fonts: Inter (English) + Tajawal (Arabic) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', 'Readex Pro', sans-serif;
+        }
+        [dir="rtl"] {
+            font-family: 'Readex Pro', sans-serif;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
 </head>
-<body class="dark" dir="ltr">
-    <!-- Skip to main content link (accessibility) -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+<body class="bg-gray-950 text-gray-100 min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
 
-    <!-- ================= NAVIGATION BAR ================= -->
-    <header class="navbar" role="banner">
-        <nav class="container nav-wrapper" role="navigation" aria-label="Main navigation">
-            <div class="nav-brand">
-                <a href="#" class="logo" aria-label="Bassam Alghamdi Portfolio">
-                    <span class="logo-icon">BA</span>
-                    <span class="logo-text">Bassam <span class="accent">Alghamdi</span></span>
+    <!-- Navigation Header -->
+    <header class="fixed top-0 w-full z-50 glass-card border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#" class="text-xl font-bold tracking-wider text-brand-500 hover:text-brand-400 transition-colors">
+                    BASSAM<span class="text-gray-100">.DEV</span>
                 </a>
-            </div>
 
-            <!-- Navigation Links -->
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 rtl:space-x-reverse text-sm font-medium">
+                    <a href="#about" data-i18n="nav.about" class="hover:text-brand-400 transition-colors">About</a>
+                    <a href="#skills" data-i18n="nav.skills" class="hover:text-brand-400 transition-colors">Skills</a>
+                    <a href="#projects" data-i18n="nav.projects" class="hover:text-brand-400 transition-colors">Projects</a>
+                    <a href="#experience" data-i18n="nav.experience" class="hover:text-brand-400 transition-colors">Experience</a>
+                    <a href="#contact" data-i18n="nav.contact" class="hover:text-brand-400 transition-colors">Contact</a>
+                </nav>
 
-            <!-- Nav Actions -->
-            <div class="nav-actions">
-                <button class="btn-icon theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle dark/light theme">
-                    <span class="theme-icon">🌙</span>
-                </button>
-                <div class="language-switcher">
-                    <button class="btn-language active" id="langEN" data-lang="en" aria-label="English">EN</button>
-                    <span class="lang-divider">/</span>
-                    <button class="btn-language" id="langAR" data-lang="ar" aria-label="عربي">AR</button>
+                <!-- Actions: Language Switcher & Download CV -->
+                <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                    <!-- Language Switcher Toggle -->
+                    <button id="langToggle" onclick="toggleLanguage()" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-globe text-brand-500"></i>
+                        <span id="langText">العربية</span>
+                    </button>
+
+                    <!-- Nav CV Download Button -->
+                    <a href="assets/resume.pdf" download target="_blank" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-600/20 transition-all">
+                        <i class="fa-solid fa-download"></i>
+                        <span data-i18n="hero.cv">Download CV</span>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden text-gray-400 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
                 </div>
-                <button class="hamburger" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
             </div>
-        </nav>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gray-900 border-b border-gray-800 px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" onclick="toggleMobileMenu()" data-i18n="nav.about" class="block py-2 text-gray-300 hover:text-brand-400">About</a>
+            <a href="#skills" onclick="toggleMobileMenu()" data-i18n="nav.skills" class="block py-2 text-gray-300 hover:text-brand-400">Skills</a>
+            <a href="#projects" onclick="toggleMobileMenu()" data-i18n="nav.projects" class="block py-2 text-gray-300 hover:text-brand-400">Projects</a>
+            <a href="#experience" onclick="toggleMobileMenu()" data-i18n="nav.experience" class="block py-2 text-gray-300 hover:text-brand-400">Experience</a>
+            <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav.contact" class="block py-2 text-gray-300 hover:text-brand-400">Contact</a>
+            <a href="assets/resume.pdf" download target="_blank" class="mt-2 w-full inline-flex justify-center items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-brand-600 text-white">
+                <i class="fa-solid fa-download"></i>
+                <span data-i18n="hero.cv">Download CV</span>
+            </a>
+        </div>
     </header>
 
-    <!-- ================= MAIN CONTENT ================= -->
-    <main id="main-content">
-        <!-- HERO SECTION -->
-        <section class="hero" id="hero" role="region" aria-label="Hero introduction">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1 class="hero-title">
-                            <span lang-en="Hi, I'm" lang-ar="مرحباً، أنا">Hi, I'm</span>
-                            <span class="accent">Bassam Alghamdi</span>
-                        </h1>
-                        <p class="hero-subtitle" lang-en="Full-Stack Developer • Software Engineer • Building intelligent, scalable solutions with modern technologies" lang-ar="مطور Full-Stack • مهندس برمجيات • بناء حلول ذكية وقابلة للتوسع باستخدام التقنيات الحديثة">
-                            Full-Stack Developer • Software Engineer • Building intelligent, scalable solutions with modern technologies
-                        </p>
-                        <p class="hero-description" lang-en="Specializing in AI-driven applications, data engineering, OTA automation, and full-stack web development. CDMP Certified." lang-ar="متخصص في تطبيقات يدعمها الذكاء الاصطناعي، وهندسة البيانات، والتشغيل الآلي، وتطوير الويب الكامل. حاصل على شهادة CDMP.">
-                            Specializing in AI-driven applications, data engineering, OTA automation, and full-stack web development. CDMP Certified.
-                        </p>
-                        
-                        <div class="hero-ctas">
-                            <a href="#projects" class="btn btn-primary">View My Projects</a>
-                            <a href="./assets/Bassam%20Alghamdi%20-%20Computer%20Science.pdf" class="btn btn-secondary" download>
-                                📥 Download CV
-                            </a>
-                            <a href="https://www.linkedin.com/in/bassam-alghamdi-42594028a/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                                LinkedIn
-                            </a>
-                        </div>
+    <main class="flex-grow pt-24">
 
-                        <!-- Quick Skills Tags -->
-                        <div class="hero-skills">
-                            <span class="skill-tag">Full-Stack</span>
-                            <span class="skill-tag">AI/ML</span>
-                            <span class="skill-tag">Data Eng</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">Power BI</span>
-                        </div>
-                    </div>
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 flex flex-col items-center text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-medium mb-6">
+                <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                <span data-i18n="hero.badge">CDMP Certified | Computer Science Professional</span>
+            </div>
 
-                    <div class="hero-visual">
-                        <div class="profile-card">
-                            <img src="./assets/profile-placeholder.jpg" alt="Bassam Alghamdi" loading="lazy">
-                            <div class="card-badge">Software Engineer</div>
-                        </div>
-                    </div>
-                </div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                <span data-i18n="hero.titlePrefix">Hi, I'm</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-teal-300 to-emerald-400" data-i18n="hero.name">Bassam Alghamdi</span>
+            </h1>
+
+            <p class="max-w-3xl text-lg sm:text-xl text-gray-400 mb-10 leading-relaxed" data-i18n="hero.subtitle">
+                Software Engineer & Data Specialist driving business automation, complex system design, full-stack application development, and advanced analytics.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="#projects" class="px-6 py-3.5 text-sm font-semibold rounded-xl bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-600/30 transition-all flex items-center gap-2">
+                    <span data-i18n="hero.projects">View Projects</span>
+                    <i class="fa-solid fa-arrow-right rtl:rotate-180"></i>
+                </a>
+                <a href="assets/resume.pdf" download target="_blank" class="px-6 py-3.5 text-sm font-semibold rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-file-arrow-down text-brand-400"></i>
+                    <span data-i18n="hero.cv">Download CV / تحميل السيرة الذاتية</span>
+                </a>
             </div>
         </section>
 
-        <!-- ABOUT SECTION -->
-        <section class="about section" id="about" role="region" aria-label="About me">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>
-                            I'm a <strong>Computer Science graduate</strong> with a passion for building intelligent, scalable applications that solve real-world problems. My expertise spans full-stack web development, artificial intelligence, data engineering, and automation.
+        <!-- About Me Section -->
+        <section id="about" class="py-20 bg-gray-900/50 border-y border-gray-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-white tracking-tight" data-i18n="about.title">About Me</h2>
+                    <div class="w-12 h-1 bg-brand-500 mx-auto mt-2 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6 text-gray-300 leading-relaxed">
+                        <p data-i18n="about.p1">
+                            I hold a Bachelor’s degree in Computer Science and a Certified Data Management Professional (CDMP) credential. My core experience bridges full-stack application development, OTA automation solutions, and business intelligence analytics.
                         </p>
-                        <p>
-                            With hands-on experience in designing ETL pipelines, developing AI-powered platforms, and creating interactive web applications, I focus on writing clean, maintainable code and delivering high-quality solutions. I'm particularly interested in integrating AI and machine learning into user-facing applications.
+                        <p data-i18n="about.p2">
+                            With proven experience at organizations such as <strong class="text-brand-400">Bonyan Hospitality</strong> and <strong class="text-brand-400">Misk Foundation</strong>, I design reliable automation workflows, scale backend services, optimize SQL databases, and deliver high-impact executive dashboards.
                         </p>
-                        <p>
-                            Currently, I work as an <strong>IT Specialist (Tamheer)</strong> at SGS, where I automate processes using Power Automate and create impactful dashboards with Power BI. I'm always learning new technologies and excited about contributing to innovative projects.
-                        </p>
-                    </div>
-
-                    <div class="about-stats">
-                        <div class="stat-box">
-                            <div class="stat-number">5+</div>
-                            <div class="stat-label">Years of Learning</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Projects Completed</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-number">3</div>
-                            <div class="stat-label">Certifications</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SKILLS SECTION -->
-        <section class="skills section" id="skills" role="region" aria-label="Technical skills">
-            <div class="container">
-                <h2 class="section-title">Technical Skills</h2>
-                
-                <div class="skills-grid">
-                    <!-- Frontend Skills -->
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Frontend Development</h3>
-                        <div class="skill-items">
-                            <span class="skill-badge">HTML5</span>
-                            <span class="skill-badge">CSS3</span>
-                            <span class="skill-badge">JavaScript</span>
-                            <span class="skill-badge">React</span>
-                            <span class="skill-badge">Responsive Design</span>
-                            <span class="skill-badge">Tailwind CSS</span>
-                        </div>
-                    </div>
-
-                    <!-- Backend Skills -->
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Backend & Databases</h3>
-                        <div class="skill-items">
-                            <span class="skill-badge">Python</span>
-                            <span class="skill-badge">Flask</span>
-                            <span class="skill-badge">Django</span>
-                            <span class="skill-badge">Node.js</span>
-                            <span class="skill-badge">PostgreSQL</span>
-                            <span class="skill-badge">MongoDB</span>
-                            <span class="skill-badge">Firebase</span>
-                        </div>
-                    </div>
-
-                    <!-- Data & AI Skills -->
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Data & AI</h3>
-                        <div class="skill-items">
-                            <span class="skill-badge">Data Engineering</span>
-                            <span class="skill-badge">ETL Pipelines</span>
-                            <span class="skill-badge">Power BI</span>
-                            <span class="skill-badge">Machine Learning</span>
-                            <span class="skill-badge">Pandas & NumPy</span>
-                            <span class="skill-badge">Data Visualization</span>
-                        </div>
-                    </div>
-
-                    <!-- DevOps & Automation -->
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">DevOps & Automation</h3>
-                        <div class="skill-items">
-                            <span class="skill-badge">Power Automate</span>
-                            <span class="skill-badge">OTA Automation</span>
-                            <span class="skill-badge">Git & GitHub</span>
-                            <span class="skill-badge">CI/CD</span>
-                            <span class="skill-badge">OpenCV</span>
-                            <span class="skill-badge">REST APIs</span>
-                        </div>
-                    </div>
-
-                    <!-- Tools & Other -->
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Tools & Platforms</h3>
-                        <div class="skill-items">
-                            <span class="skill-badge">VS Code</span>
-                            <span class="skill-badge">Figma</span>
-                            <span class="skill-badge">GitHub</span>
-                            <span class="skill-badge">Docker</span>
-                            <span class="skill-badge">AWS/Cloud</span>
-                            <span class="skill-badge">Agile/Scrum</span>
-                        </div>
-                    </div>
-
-                    <!-- Soft Skills -->
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Soft Skills</h3>
-                        <div class="skill-items">
-                            <span class="skill-badge">Communication</span>
-                            <span class="skill-badge">Problem Solving</span>
-                            <span class="skill-badge">Teamwork</span>
-                            <span class="skill-badge">Leadership</span>
-                            <span class="skill-badge">Fast Learning</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS SECTION -->
-        <section class="projects section" id="projects" role="region" aria-label="Featured projects">
-            <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">A selection of my recent work showcasing various technologies and methodologies</p>
-
-                <div class="projects-grid">
-                    <!-- Project 1: Mindspace -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="./assets/project1.jpg" alt="Mindspace mental health platform">
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Mindspace</h3>
-                            <p class="project-description">
-                                AI-powered mental health platform with depression level assessment and personalized support for university students.
-                            </p>
-                            <div class="project-tags">
-                                <span>Flask</span>
-                                <span>Firebase</span>
-                                <span>AI</span>
-                                <span>Python</span>
+                        <div class="grid grid-cols-2 gap-4 pt-4">
+                            <div class="p-4 rounded-xl glass-card">
+                                <span class="block text-2xl font-bold text-brand-400">CDMP</span>
+                                <span class="text-xs text-gray-400" data-i18n="about.stat1">Certified Data Management</span>
                             </div>
-                            <div class="project-links">
-                                <a href="https://github.com/YuTaX9/Mindspace" target="_blank" rel="noopener noreferrer" class="link-btn">
-                                    GitHub →
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 2: Speak Easy -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="./assets/project3.jpg" alt="Speak Easy learning platform">
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Speak Easy</h3>
-                            <p class="project-description">
-                                VR-based English learning platform with real-time AI feedback and interactive scenarios.
-                            </p>
-                            <div class="project-tags">
-                                <span>React</span>
-                                <span>Flask</span>
-                                <span>VR</span>
-                                <span>NoSQL</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/YuTaX9/graduation-project" target="_blank" rel="noopener noreferrer" class="link-btn">
-                                    GitHub →
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 3: Inventory Management -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="./assets/InventoryHub.png" alt="Inventory Management System">
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">InventoryHub</h3>
-                            <p class="project-description">
-                                Full-stack e-commerce and warehouse management system for order processing and stock management.
-                            </p>
-                            <div class="project-tags">
-                                <span>Django REST</span>
-                                <span>React</span>
-                                <span>PostgreSQL</span>
-                                <span>Tailwind</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/YuTaX9/Order-and-Inventory-Management-System-backend" target="_blank" rel="noopener noreferrer" class="link-btn">
-                                    GitHub →
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 4: Data Dashboards -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="./assets/Operations_Overview.png" alt="Power BI dashboards">
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Analytics Dashboards</h3>
-                            <p class="project-description">
-                                Comprehensive Power BI dashboards for operational data analysis and KPI tracking.
-                            </p>
-                            <div class="project-tags">
-                                <span>Power BI</span>
-                                <span>Data Viz</span>
-                                <span>Analytics</span>
-                                <span>ETL</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/YuTaX9/Dashboards" target="_blank" rel="noopener noreferrer" class="link-btn">
-                                    GitHub →
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 5: Computer Vision -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="./assets/project4.jpg" alt="Face detection system">
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Computer Vision Suite</h3>
-                            <p class="project-description">
-                                Real-time face and eye detection with visual effects using OpenCV.
-                            </p>
-                            <div class="project-tags">
-                                <span>OpenCV</span>
-                                <span>Python</span>
-                                <span>Computer Vision</span>
-                                <span>Real-time</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/YuTaX9/HRSDAI/tree/main/HRSDAI" target="_blank" rel="noopener noreferrer" class="link-btn">
-                                    GitHub →
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Project 6: Calculator -->
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="./assets/project2.jpg" alt="Calculator app">
-                        </div>
-                        <div class="project-body">
-                            <h3 class="project-title">Calculator App</h3>
-                            <p class="project-description">
-                                Responsive calculator application demonstrating vanilla JavaScript fundamentals.
-                            </p>
-                            <div class="project-tags">
-                                <span>JavaScript</span>
-                                <span>HTML/CSS</span>
-                                <span>DOM</span>
-                                <span>Responsive</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://git.generalassemb.ly/yutax9/HOMEWORK/tree/main/DOM-events-lab" target="_blank" rel="noopener noreferrer" class="link-btn">
-                                    GitHub →
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE & CERTIFICATIONS SECTION -->
-        <section class="experience section" id="experience" role="region" aria-label="Work experience and certifications">
-            <div class="container">
-                <h2 class="section-title">Experience & Certifications</h2>
-
-                <div class="experience-content">
-                    <!-- Work Experience -->
-                    <div class="experience-block">
-                        <h3 class="block-title">Work Experience</h3>
-                        
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-marker"></div>
-                                <div class="timeline-content">
-                                    <h4 class="timeline-heading">IT Specialist (Tamheer Program)</h4>
-                                    <p class="timeline-company">SGS — Saudi Arabia</p>
-                                    <p class="timeline-date">2026 - Present</p>
-                                    <p class="timeline-description">
-                                        Automated ETL pipelines using Power Automate. Designed and deployed Power BI dashboards for operational data analysis. Collaborated with cross-functional teams to improve internal processes.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-marker"></div>
-                                <div class="timeline-content">
-                                    <h4 class="timeline-heading">Computer Science Graduate</h4>
-                                    <p class="timeline-company">University Graduation</p>
-                                    <p class="timeline-date">2025</p>
-                                    <p class="timeline-description">
-                                        Completed comprehensive computer science program with focus on AI, data engineering, and full-stack development. Developed multiple capstone projects.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-marker"></div>
-                                <div class="timeline-content">
-                                    <h4 class="timeline-heading">Full-Stack Developer</h4>
-                                    <p class="timeline-company">Personal & Academic Projects</p>
-                                    <p class="timeline-date">2022 - 2025</p>
-                                    <p class="timeline-description">
-                                        Developed multiple full-stack applications including AI-powered platforms, learning systems, and e-commerce solutions.
-                                    </p>
-                                </div>
+                            <div class="p-4 rounded-xl glass-card">
+                                <span class="block text-2xl font-bold text-brand-400">Full-Stack</span>
+                                <span class="text-xs text-gray-400" data-i18n="about.stat2">Web & Automation Engineering</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Certifications -->
-                    <div class="experience-block">
-                        <h3 class="block-title">Certifications & Achievements</h3>
-                        
-                        <div class="certs-grid">
-                            <div class="cert-card">
-                                <div class="cert-icon">🎓</div>
-                                <h4 class="cert-name">CDMP Certified</h4>
-                                <p class="cert-issuer">Data Management Certification</p>
-                            </div>
-
-                            <div class="cert-card">
-                                <div class="cert-icon">🎯</div>
-                                <h4 class="cert-name">Full-Stack Development</h4>
-                                <p class="cert-issuer">Comprehensive Web Development Program</p>
-                            </div>
-
-                            <div class="cert-card">
-                                <div class="cert-icon">🤖</div>
-                                <h4 class="cert-name">AI & Machine Learning</h4>
-                                <p class="cert-issuer">Advanced AI/ML Specialization</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section class="contact section" id="contact" role="region" aria-label="Contact information">
-            <div class="container">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="section-subtitle">I'm open to collaborations, freelance projects, and exciting opportunities</p>
-
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Get In Touch</h3>
-                        
-                        <ul class="contact-list">
-                            <li>
-                                <span class="contact-icon">✉️</span>
-                                <div>
-                                    <p class="contact-label">Email</p>
-                                    <a href="mailto:bassam.ghk@gmail.com" class="contact-link">bassam.ghk@gmail.com</a>
-                                </div>
+                    <!-- Highlights List -->
+                    <div class="p-8 rounded-2xl glass-card border border-gray-800 space-y-4">
+                        <h3 class="text-xl font-bold text-white mb-4" data-i18n="about.highlightsTitle">Core Competencies</h3>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-400"></i>
+                                <span data-i18n="about.h1">OTA & Hotel Systems Integration & Automation</span>
                             </li>
-                            <li>
-                                <span class="contact-icon">💼</span>
-                                <div>
-                                    <p class="contact-label">LinkedIn</p>
-                                    <a href="https://www.linkedin.com/in/bassam-alghamdi-42594028a/" target="_blank" rel="noopener noreferrer" class="contact-link">
-                                        Bassam Alghamdi
-                                    </a>
-                                </div>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-400"></i>
+                                <span data-i18n="about.h2">Full-Stack Web Development (Python, JS, Frameworks)</span>
                             </li>
-                            <li>
-                                <span class="contact-icon">🔗</span>
-                                <div>
-                                    <p class="contact-label">GitHub</p>
-                                    <a href="https://github.com/YuTaX9" target="_blank" rel="noopener noreferrer" class="contact-link">
-                                        @YuTaX9
-                                    </a>
-                                </div>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-400"></i>
+                                <span data-i18n="about.h3">Database Engineering, SQL View Optimization & CTEs</span>
                             </li>
-                            <li>
-                                <span class="contact-icon">📍</span>
-                                <div>
-                                    <p class="contact-label">Location</p>
-                                    <p class="contact-link">Saudi Arabia</p>
-                                </div>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-400"></i>
+                                <span data-i18n="about.h4">Executive Reporting & BI Dashboards (Power BI, SAC)</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-circle-check text-brand-400"></i>
+                                <span data-i18n="about.h5">Data Governance & Quality Management</span>
                             </li>
                         </ul>
                     </div>
-
-                    <!-- Contact Form -->
-                    <form class="contact-form" id="contactForm" action="https://getform.io/f/anlnkpna" method="POST">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required minlength="2" placeholder="Your name">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="your@email.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="What's this about?">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="6" required minlength="10" placeholder="Your message here..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
-                        <div id="formStatus" class="form-status" aria-live="polite" aria-atomic="true"></div>
-                    </form>
                 </div>
             </div>
         </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-white tracking-tight" data-i18n="skills.title">Technical Skills</h2>
+                    <div class="w-12 h-1 bg-brand-500 mx-auto mt-2 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Category 1 -->
+                    <div class="p-6 rounded-2xl glass-card hover:border-brand-500/50 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-3" data-i18n="skills.cat1">Full-Stack & Web</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">JavaScript</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">HTML5 / CSS3</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">Python</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">REST APIs</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">Tailwind CSS</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2 -->
+                    <div class="p-6 rounded-2xl glass-card hover:border-brand-500/50 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-3" data-i18n="skills.cat2">Data & Databases</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">SQL / MySQL</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">Data Engineering</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">Power BI</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">Pandas / NumPy</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">ETL Pipelines</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3 -->
+                    <div class="p-6 rounded-2xl glass-card hover:border-brand-500/50 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-3" data-i18n="skills.cat3">Automation & Systems</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">OTA Automation</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">Workflow Engine</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">Git / GitHub</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">Docker</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">Linux</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 4 -->
+                    <div class="p-6 rounded-2xl glass-card hover:border-brand-500/50 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-3" data-i18n="skills.cat4">Governance & Strategy</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">CDMP Standards</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">Data Governance</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">KPI Tracking</span>
+                            <span class="px-2.5 py-1 rounded-md bg-gray-800 text-xs text-gray-300">Agile Practices</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects" class="py-20 bg-gray-900/50 border-y border-gray-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-white tracking-tight" data-i18n="projects.title">Featured Projects</h2>
+                    <div class="w-12 h-1 bg-brand-500 mx-auto mt-2 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Project Card 1: Inventory Hub -->
+                    <div class="rounded-2xl glass-card overflow-hidden flex flex-col group border border-gray-800 hover:border-brand-500/50 transition-all">
+                        <div class="h-48 overflow-hidden bg-gray-800 relative">
+                            <img src="assets/InventoryHub.png" alt="Inventory Hub System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://via.placeholder.com/600x400/1f2937/9ca3af?text=Inventory+Hub'">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2" data-i18n="projects.p1Title">Inventory Hub System</h3>
+                                <p class="text-sm text-gray-400 mb-4" data-i18n="projects.p1Desc">Comprehensive web dashboard for real-time inventory tracking, multi-channel automated synchronization, and operational efficiency analytics.</p>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-2 py-1 text-xs rounded bg-brand-500/10 text-brand-400">Full-Stack</span>
+                                    <span class="px-2 py-1 text-xs rounded bg-brand-500/10 text-brand-400">Python</span>
+                                    <span class="px-2 py-1 text-xs rounded bg-brand-500/10 text-brand-400">SQL</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a href="https://github.com/yutax9" target="_blank" class="text-xs font-semibold text-gray-300 hover:text-white flex items-center gap-1.5">
+                                        <i class="fa-brands fa-github"></i> <span data-i18n="projects.repo">Repository</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: OTA Automation Engine -->
+                    <div class="rounded-2xl glass-card overflow-hidden flex flex-col group border border-gray-800 hover:border-brand-500/50 transition-all">
+                        <div class="h-48 bg-gradient-to-br from-brand-900/40 to-gray-800 flex items-center justify-center p-6 border-b border-gray-800">
+                            <i class="fa-solid fa-bolt text-5xl text-brand-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2" data-i18n="projects.p2Title">OTA Automation Engine</h3>
+                                <p class="text-sm text-gray-400 mb-4" data-i18n="projects.p2Desc">Automated data synchronization platform for online travel agencies, optimizing rate updates, availability alignment, and channel management.</p>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-2 py-1 text-xs rounded bg-brand-500/10 text-brand-400">Python</span>
+                                    <span class="px-2 py-1 text-xs rounded bg-brand-500/10 text-brand-400">REST APIs</span>
+                                    <span class="px-2 py-1 text-xs rounded bg-brand-500/10 text-brand-400">ETL</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a href="https://github.com/yutax9" target="_blank" class="text-xs font-semibold text-gray-300 hover:text-white flex items-center gap-1.5">
+                                        <i class="fa-brands fa-github"></i> <span data-i18n="projects.repo">Repository</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: Business Intelligence & KPI Analytics -->
+                    <div class="rounded-2xl glass-card overflow-hidden flex flex-col group border border-gray-800 hover:border-brand-500/50 transition-all">
+                        <div class="h-48 bg-gradient-to-br from-teal-900/40 to-gray-800 flex items-center justify-center p-6 border-b border-gray-800">
+                            <i class="fa-solid fa-chart-line text-5xl text-brand-400 group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2" data-i18n="projects.p3Title">BI Dashboard & KPI Analytics</h3>
+                                <p class="text-sm text-gray-400 mb-4" data-i18n="projects.p3Desc">Interactive executive dashboards delivering data-driven insights into revenue performance, operational metrics, and decision-making KPIs.</p>
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-2 py-1 text-xs rounded bg-brand-500/10 text-brand-400">Power BI</span>
+                                    <span class="px-2 py-1 text-xs rounded bg-brand-500/10 text-brand-400">SQL CTEs</span>
+                                    <span class="px-2 py-1 text-xs rounded bg-brand-500/10 text-brand-400">Analytics</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <a href="https://github.com/yutax9" target="_blank" class="text-xs font-semibold text-gray-300 hover:text-white flex items-center gap-1.5">
+                                        <i class="fa-brands fa-github"></i> <span data-i18n="projects.repo">Repository</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Certifications Section -->
+        <section id="experience" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+                    <!-- Work History -->
+                    <div>
+                        <div class="mb-10">
+                            <h2 class="text-2xl font-bold text-white" data-i18n="exp.title">Work History</h2>
+                            <div class="w-12 h-1 bg-brand-500 mt-2 rounded-full"></div>
+                        </div>
+
+                        <div class="space-y-8 relative before:absolute before:inset-0 before:left-3.5 rtl:before:right-3.5 rtl:before:left-auto before:w-0.5 before:bg-gray-800">
+
+                            <!-- Item 1 -->
+                            <div class="relative pl-10 rtl:pr-10 rtl:pl-0">
+                                <div class="absolute left-1.5 rtl:right-1.5 rtl:left-auto top-1.5 w-4 h-4 rounded-full bg-brand-500 border-4 border-gray-950"></div>
+                                <div class="p-6 rounded-xl glass-card">
+                                    <span class="text-xs font-semibold text-brand-400">2023 - Present</span>
+                                    <h3 class="text-lg font-bold text-white mt-1" data-i18n="exp.role1">OTA & Systems Specialist</h3>
+                                    <p class="text-xs text-gray-400 mb-3" data-i18n="exp.company1">Bonyan Hospitality</p>
+                                    <p class="text-sm text-gray-300" data-i18n="exp.desc1">Engineering automated synchronization workflows across OTA distribution channels, managing system integrations, and structuring operational data feeds.</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="relative pl-10 rtl:pr-10 rtl:pl-0">
+                                <div class="absolute left-1.5 rtl:right-1.5 rtl:left-auto top-1.5 w-4 h-4 rounded-full bg-gray-700 border-4 border-gray-950"></div>
+                                <div class="p-6 rounded-xl glass-card">
+                                    <span class="text-xs font-semibold text-brand-400">2022 - 2023</span>
+                                    <h3 class="text-lg font-bold text-white mt-1" data-i18n="exp.role2">Data & Software Trainee</h3>
+                                    <p class="text-xs text-gray-400 mb-3" data-i18n="exp.company2">Misk Foundation / Professional Programs</p>
+                                    <p class="text-sm text-gray-300" data-i18n="exp.desc2">Completed intensive full-stack and data engineering training, mastering database view optimizations, web application security, and cloud deployment.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Education & Credentials -->
+                    <div>
+                        <div class="mb-10">
+                            <h2 class="text-2xl font-bold text-white" data-i18n="edu.title">Education & Certifications</h2>
+                            <div class="w-12 h-1 bg-brand-500 mt-2 rounded-full"></div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Degree -->
+                            <div class="p-6 rounded-xl glass-card border-l-4 border-l-brand-500 rtl:border-l-0 rtl:border-r-4 rtl:border-r-brand-500">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white" data-i18n="edu.degree">B.S. in Computer Science</h3>
+                                        <p class="text-sm text-gray-400" data-i18n="edu.school">University / Faculty of Computing</p>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded bg-brand-500/10 text-brand-400 text-xs font-semibold">Degree</span>
+                                </div>
+                            </div>
+
+                            <!-- Certification CDMP -->
+                            <div class="p-6 rounded-xl glass-card border-l-4 border-l-emerald-500 rtl:border-l-0 rtl:border-r-4 rtl:border-r-emerald-500">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white" data-i18n="edu.cdmp">Certified Data Management Professional (CDMP)</h3>
+                                        <p class="text-sm text-gray-400" data-i18n="edu.cdmpOrg">DAMA International</p>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 text-xs font-semibold">Certified</span>
+                                </div>
+                                <p class="text-xs text-gray-300 mt-2" data-i18n="edu.cdmpDesc">Demonstrated mastery in data governance, data architecture, quality management, and enterprise data strategy.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-900/50 border-t border-gray-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-white tracking-tight mb-4" data-i18n="contact.title">Get In Touch</h2>
+                <p class="text-gray-400 max-w-xl mx-auto mb-12" data-i18n="contact.subtitle">Whether you have an upcoming full-stack development project, automation needs, or data engineering inquiries, feel free to reach out.</p>
+
+                <div class="flex flex-wrap justify-center gap-6 max-w-2xl mx-auto">
+                    <a href="mailto:contact@example.com" class="flex items-center gap-3 px-6 py-4 rounded-xl glass-card hover:border-brand-500 text-gray-200 transition-all">
+                        <i class="fa-solid fa-envelope text-brand-400 text-xl"></i>
+                        <span class="text-sm font-medium">Email Me</span>
+                    </a>
+                    <a href="https://github.com/yutax9" target="_blank" class="flex items-center gap-3 px-6 py-4 rounded-xl glass-card hover:border-brand-500 text-gray-200 transition-all">
+                        <i class="fa-brands fa-github text-brand-400 text-xl"></i>
+                        <span class="text-sm font-medium">GitHub Profile</span>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="flex items-center gap-3 px-6 py-4 rounded-xl glass-card hover:border-brand-500 text-gray-200 transition-all">
+                        <i class="fa-brands fa-linkedin text-brand-400 text-xl"></i>
+                        <span class="text-sm font-medium">LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer" role="contentinfo">
-        <div class="container footer-content">
-            <p class="footer-text">
-                <span>© 2025 Bassam Alghamdi. All rights reserved.</span>
-                <span class="footer-divider">•</span>
-                <span>Crafted with code 💻 and creativity ✨</span>
-            </p>
-            <div class="footer-links">
-                <a href="https://github.com/YuTaX9" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
-                <a href="https://www.linkedin.com/in/bassam-alghamdi-42594028a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
-                <a href="mailto:bassam.ghk@gmail.com" aria-label="Email">Email</a>
-            </div>
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-950 border-t border-gray-800/60 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2026 Bassam Alghamdi. All rights reserved. Built with Tailwind CSS & JavaScript.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="./scripts/translations.js"></script>
-    <script src="./scripts/app.js"></script>
+    <!-- Translation Script & Interactivity -->
+    <script>
+        const translations = {
+            en: {
+                "nav.about": "About",
+                "nav.skills": "Skills",
+                "nav.projects": "Projects",
+                "nav.experience": "Experience",
+                "nav.contact": "Contact",
+                "hero.badge": "CDMP Certified | Computer Science Professional",
+                "hero.titlePrefix": "Hi, I'm",
+                "hero.name": "Bassam Alghamdi",
+                "hero.subtitle": "Software Engineer & Data Specialist driving business automation, complex system design, full-stack application development, and advanced analytics.",
+                "hero.projects": "View Projects",
+                "hero.cv": "Download CV",
+                "about.title": "About Me",
+                "about.p1": "I hold a Bachelor’s degree in Computer Science and a Certified Data Management Professional (CDMP) credential. My core experience bridges full-stack application development, OTA automation solutions, and business intelligence analytics.",
+                "about.p2": "With proven experience at organizations such as Bonyan Hospitality and Misk Foundation, I design reliable automation workflows, scale backend services, optimize SQL databases, and deliver high-impact executive dashboards.",
+                "about.stat1": "Certified Data Management",
+                "about.stat2": "Web & Automation Engineering",
+                "about.highlightsTitle": "Core Competencies",
+                "about.h1": "OTA & Hotel Systems Integration & Automation",
+                "about.h2": "Full-Stack Web Development (Python, JS, Frameworks)",
+                "about.h3": "Database Engineering, SQL View Optimization & CTEs",
+                "about.h4": "Executive Reporting & BI Dashboards (Power BI, SAC)",
+                "about.h5": "Data Governance & Quality Management",
+                "skills.title": "Technical Skills",
+                "skills.cat1": "Full-Stack & Web",
+                "skills.cat2": "Data & Databases",
+                "skills.cat3": "Automation & Systems",
+                "skills.cat4": "Governance & Strategy",
+                "projects.title": "Featured Projects",
+                "projects.p1Title": "Inventory Hub System",
+                "projects.p1Desc": "Comprehensive web dashboard for real-time inventory tracking, multi-channel automated synchronization, and operational efficiency analytics.",
+                "projects.p2Title": "OTA Automation Engine",
+                "projects.p2Desc": "Automated data synchronization platform for online travel agencies, optimizing rate updates, availability alignment, and channel management.",
+                "projects.p3Title": "BI Dashboard & KPI Analytics",
+                "projects.p3Desc": "Interactive executive dashboards delivering data-driven insights into revenue performance, operational metrics, and decision-making KPIs.",
+                "projects.repo": "Repository",
+                "exp.title": "Work History",
+                "exp.role1": "OTA & Systems Specialist",
+                "exp.company1": "Bonyan Hospitality",
+                "exp.desc1": "Engineering automated synchronization workflows across OTA distribution channels, managing system integrations, and structuring operational data feeds.",
+                "exp.role2": "Data & Software Trainee",
+                "exp.company2": "Misk Foundation / Professional Programs",
+                "exp.desc2": "Completed intensive full-stack and data engineering training, mastering database view optimizations, web application security, and cloud deployment.",
+                "edu.title": "Education & Certifications",
+                "edu.degree": "B.S. in Computer Science",
+                "edu.school": "University / Faculty of Computing",
+                "edu.cdmp": "Certified Data Management Professional (CDMP)",
+                "edu.cdmpOrg": "DAMA International",
+                "edu.cdmpDesc": "Demonstrated mastery in data governance, data architecture, quality management, and enterprise data strategy.",
+                "contact.title": "Get In Touch",
+                "contact.subtitle": "Whether you have an upcoming full-stack development project, automation needs, or data engineering inquiries, feel free to reach out."
+            },
+            ar: {
+                "nav.about": "عني",
+                "nav.skills": "المهارات",
+                "nav.projects": "المشاريع",
+                "nav.experience": "الخبرات",
+                "nav.contact": "تواصل معي",
+                "hero.badge": "مؤهل CDMP | أخصائي علوم الحاسب",
+                "hero.titlePrefix": "أهلاً، أنا",
+                "hero.name": "بسام الغامدي",
+                "hero.subtitle": "مهندس برمجيات وأخصائي بيانات متخصص في أتمتة الأعمال، تطوير التطبيقات المتكاملة (Full-Stack)، وتصميم لوحات تحليلات البيانات المتقدمة.",
+                "hero.projects": "استعرض المشاريع",
+                "hero.cv": "تحميل السيرة الذاتية",
+                "about.title": "عن بسام",
+                "about.p1": "أحمل درجة البكالوريوس في علوم الحاسب بالإضافة إلى شهادة إدارة البيانات الاحترافية (CDMP). تجمع خبرتي بين تطوير تطبيقات الويب، أتمتة أنظمة الحجوزات والفنادق (OTA)، وتحليل البيانات الذكية.",
+                "about.p2": "من خلال عملي مع جهات مثل بنيان للضيافة ومؤسسة مسك، أقوم ببناء مسارات العمل المؤتمتة، تحسين استعلامات قواعد البيانات، وتقديم لوحات قيادية عالية الكفاءة.",
+                "about.stat1": "إدارة البيانات المعتمدة",
+                "about.stat2": "تطوير الويب والأتمتة",
+                "about.highlightsTitle": "الكفاءات الأساسية",
+                "about.h1": "أتمتة وتكامل أنظمة الضيافة والحجوزات (OTA)",
+                "about.h2": "تطوير الويب المتكامل (Full-Stack)",
+                "about.h3": "هندسة قواعد البيانات وتحسين الاستعلامات والمعالجة",
+                "about.h4": "التقارير التنفيذية ولوحات المؤشرات (Power BI, SAC)",
+                "about.h5": "حوكمة البيانات وجودة نظم المعلومات",
+                "skills.title": "المهارات التقنية",
+                "skills.cat1": "تطوير الويب",
+                "skills.cat2": "البيانات وقواعد البيانات",
+                "skills.cat3": "الأتمتة والأنظمة",
+                "skills.cat4": "الحوكمة والإستراتيجية",
+                "projects.title": "المشاريع المميزة",
+                "projects.p1Title": "نظام إدارة المخزون (Inventory Hub)",
+                "projects.p1Desc": "لوحة تحكم تفاعلية لمتابعة المخزون في الوقت الفعلي، ومزامنة البيانات عبر القنوات المتعددة لرفع الكفاءة التشغيلية.",
+                "projects.p2Title": "محرك أتمتة قنوات الحجز (OTA Engine)",
+                "projects.p2Desc": "منصة أتمتة وتكامل بيانات مخصصة لقنوات السفر والحجوزات لضمان تحديث الأسعار والتوافر بدقة عالية.",
+                "projects.p3Title": "تحليلات البيانات ولوحات المؤشرات",
+                "projects.p3Desc": "تصميم لوحات قيادية تفاعلية لدعم اتخاذ القرار وتتبع مؤشرات الأداء التشغيلية والمالية.",
+                "projects.repo": "المستودع",
+                "exp.title": "الخبرة المهنية",
+                "exp.role1": "أخصائي أنظمة وأتمتة OTA",
+                "exp.company1": "بنيان للضيافة",
+                "exp.desc1": "بناء مسارات المزامنة المؤتمتة لقنوات توزيع الحجوزات، وإدارة تكامل الأنظمة وهيكلة تدفق البيانات.",
+                "exp.role2": "متدرب تطوير وبرمجيات",
+                "exp.company2": "مؤسسة مسك / البرامج الاحترافية",
+                "exp.desc2": "إتمام تدريب مكثف في هندسة البرمجيات والبيانات، تحسين أداء استعلامات SQL، وأمن التطبيقات.",
+                "edu.title": "التعليم والشهادات",
+                "edu.degree": "بكالوريوس علوم الحاسب",
+                "edu.school": "الكلية / الجامعة",
+                "edu.cdmp": "شهادة إدارة البيانات الاحترافية (CDMP)",
+                "edu.cdmpOrg": "منظمة DAMA العالمية",
+                "edu.cdmpDesc": "إتقان معايير حوكمة البيانات، هيكلة المعمارية، وضمان جودة البيانات المؤسسية.",
+                "contact.title": "تواصل معي",
+                "contact.subtitle": "سواء كان لديك مشروع تطوير، أتمتة أنظمة، أو استفسار تقني في مجال البيانات، يسعدني التواصل معك."
+            }
+        };
+
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            const html = document.documentElement;
+            
+            html.setAttribute('lang', currentLang);
+            html.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+
+            document.getElementById('langText').innerText = currentLang === 'en' ? 'العربية' : 'English';
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerText = translations[currentLang][key];
+                }
+            });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
