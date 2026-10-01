@@ -1,196 +1,93 @@
-// Simple interactive features:
-// - theme toggle (persisted in localStorage)
-// - mobile menu toggle
-// - smooth scrolling for nav links
-// - project modal (reads data attributes)
-// - basic contact form UX (prevent double-submit, show status)
+/* Portfolio behaviour: language (EN/AR), theme, mobile menu, OTA panel. No dependencies. */
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  root.classList.add('js');
 
-document.addEventListener("DOMContentLoaded", () => {
-  const body = document.body;
-  const themeToggle = document.getElementById("themeToggle");
-  const menuBtn = document.getElementById("menuBtn");
-  const navLinks = document.getElementById("navLinks");
-  const yearEl = document.getElementById("year");
-  const viewBtns = document.querySelectorAll(".viewBtn");
-  const projectModal = document.getElementById("projectModal");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalDesc = document.getElementById("modalDesc");
-  const closeModal = document.getElementById("closeModal");
-  const contactForm = document.getElementById("contactForm");
-  const formStatus = document.getElementById("formStatus");
+  function load(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
+  function save(key, val) { try { localStorage.setItem(key, val); } catch (e) {} }
 
-  // fill year
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  /* ---------- Theme ---------- */
+  var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  root.setAttribute('data-theme', load('theme') || (prefersLight ? 'light' : 'dark'));
+  document.getElementById('theme').addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    save('theme', next);
+  });
 
-  /**
-   * savedTheme(theme) & themeToggle
-   * - Updates CSS variables to match the selected theme
-   * - Saves the choice to localStorage
-   * - Changes the toggle button icon
-   */
-  // theme: check localStorage
-  // ===== Theme Toggle =====
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme) {
-    body.classList.add(savedTheme);
-    themeToggle.textContent = savedTheme === "dark" ? "🌞" : "🌙";
+  /* ---------- Language ----------
+     Every translatable element holds its Arabic text in data-ar.
+     The English text is stored once in data-en, then swapped back and forth. */
+  var nodes = document.querySelectorAll('[data-ar]');
+  var langBtn = document.getElementById('lang');
+  var titles = {
+    en: document.title,
+    ar: 'بسام الغامدي | مهندس أتمتة ومطوّر ويب متكامل'
+  };
+
+  nodes.forEach(function (el) { el.setAttribute('data-en', el.textContent); });
+
+  function setLang(lang) {
+    var ar = lang === 'ar';
+    root.lang = lang;
+    root.dir = ar ? 'rtl' : 'ltr';
+    nodes.forEach(function (el) { el.textContent = el.getAttribute(ar ? 'data-ar' : 'data-en'); });
+    document.title = titles[lang];
+    langBtn.textContent = ar ? 'English' : 'العربية';
+    langBtn.lang = ar ? 'en' : 'ar';
+    save('lang', lang);
+  }
+  langBtn.addEventListener('click', function () { setLang(root.lang === 'ar' ? 'en' : 'ar'); });
+  if (load('lang') === 'ar') setLang('ar');
+
+  /* ---------- Mobile menu ---------- */
+  var btn = document.querySelector('.menu-btn');
+  var menu = document.getElementById('menu');
+  btn.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  });
+  menu.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+  });
+
+  /* ---------- OTA panel: runs once (static if reduced motion is preferred) ---------- */
+  var items = document.querySelectorAll('#ota-list li');
+  var fill = document.getElementById('ota-fill');
+  var state = document.getElementById('ota-state');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function finish() { state.textContent = 'Complete'; state.classList.add('done'); }
+  if (reduce) {
+    items.forEach(function (li) { li.classList.add('on'); });
+    fill.style.width = '100%';
+    finish();
   } else {
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    const defaultTheme = prefersDark ? "dark" : "light";
-    body.classList.add(defaultTheme);
-    themeToggle.textContent = defaultTheme === "dark" ? "🌞" : "🌙";
+    requestAnimationFrame(function () { fill.style.width = '100%'; });
+    items.forEach(function (li) {
+      setTimeout(function () { li.classList.add('on'); }, Number(li.dataset.ms));
+    });
+    setTimeout(finish, 3300);
   }
 
-  themeToggle?.addEventListener("click", () => {
-    const current = body.classList.contains("dark") ? "dark" : "light";
-    const next = current === "dark" ? "light" : "dark";
-    body.classList.remove("dark", "light");
-    body.classList.add(next);
-    localStorage.setItem("theme", next);
-    themeToggle.textContent = next === "dark" ? "🌞" : "🌙";
-  });
-
-  // mobile menu
-  menuBtn?.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-
-  // smooth scrolling for internal links
-  document.querySelectorAll('a[href^="#"]').forEach((a) => {
-    a.addEventListener("click", (e) => {
-      const target = document.querySelector(a.getAttribute("href"));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-        // hide mobile menu if open
-        navLinks.classList.remove("show");
-      }
-    });
-  });
-
-  // project modal handlers
-  viewBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const card = e.target.closest(".project-card");
-      const title = card.dataset.title || card.querySelector("h3")?.innerText;
-      const desc = card.dataset.desc || "No description provided.";
-      modalTitle.textContent = title;
-      modalDesc.textContent = desc;
-      projectModal.setAttribute("aria-hidden", "false");
-    });
-  });
-
-  // modal close
-  closeModal?.addEventListener("click", () => {
-    projectModal.setAttribute("aria-hidden", "true");
-  });
-
-  projectModal?.addEventListener("click", (e) => {
-    if (e.target === projectModal) {
-      projectModal.setAttribute("aria-hidden", "true");
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && projectModal?.getAttribute("aria-hidden") === "false") {
-      projectModal.setAttribute("aria-hidden", "true");
-    }
-  });
-
-  /* Timeline reveal using IntersectionObserver */
-  const timelineItems = document.querySelectorAll(".timeline-item");
-
-  if ("IntersectionObserver" in window && timelineItems.length) {
-    const tlObserver = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            // unobserve if you want the animation only once
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { root: null, rootMargin: "0px 0px -10% 0px", threshold: 0.12 }
-    );
-
-    timelineItems.forEach((item) => tlObserver.observe(item));
-  } else {
-    // fallback: if browser doesn't support IntersectionObserver, show all
-    timelineItems.forEach((i) => i.classList.add("in-view"));
-  }
-
-  // basic form UX & validation (for user feedback)
-  contactForm?.addEventListener("submit", (e) => {
+  /* ---------- Contact form (Getform) ---------- */
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('formStatus');
+  var msg = {
+    en: { sending: 'Sending…', ok: 'Message sent. Thank you!', fail: 'Sending failed. Please email me directly.', net: 'Network error. Please try again later.' },
+    ar: { sending: 'جارٍ الإرسال…', ok: 'تم إرسال رسالتك. شكرًا لك!', fail: 'تعذّر الإرسال. تواصل معي عبر البريد مباشرة.', net: 'خطأ في الشبكة. حاول لاحقًا.' }
+  };
+  function say(key, cls) { status.textContent = msg[root.lang === 'ar' ? 'ar' : 'en'][key]; status.className = cls || ''; }
+  form.addEventListener('submit', function (e) {
     e.preventDefault();
-
-    // disable form while sending
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    formStatus.textContent = "Sending…";
-
-    const action = contactForm.action;
-    const formData = new FormData(contactForm);
-
-    fetch(action, {
-      method: "POST",
-      body: formData,
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((res) => {
-        if (res.ok) {
-          formStatus.textContent = "Message sent — thanks!";
-          formStatus.style.color = "green";
-          contactForm.reset();
-        } else {
-          formStatus.textContent =
-            "Submission failed. Try emailing me directly.";
-          formStatus.style.color = "red";
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        formStatus.textContent = "Network error. Try again later.";
-        formStatus.style.color = "red";
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-        setTimeout(() => {
-          formStatus.textContent = "";
-        }, 4000);
-      });
+    var submit = form.querySelector('button[type="submit"]');
+    submit.disabled = true; say('sending');
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+      .then(function (res) { if (res.ok) { say('ok', 'ok'); form.reset(); } else { say('fail', 'err'); } })
+      .catch(function () { say('net', 'err'); })
+      .then(function () { submit.disabled = false; setTimeout(function () { status.textContent = ''; }, 5000); });
   });
-});
 
-// References for JavaScript
-
-// MDN — DOM Introduction
-// https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
-// → Learned how to select elements and update content dynamically using querySelector and addEventListener.
-
-// MDN — Element.scrollIntoView()
-// https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
-// → Used for smooth scrolling when clicking navigation links.
-
-// MDN — localStorage
-// https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-// → Used to store the user’s theme preference (light/dark) between sessions.
-
-// MDN — Fetch API
-// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-// also this web
-// https://stackoverflow.com/questions/48841097/receive-and-process-json-using-fetch-api-in-javascript
-// → Used to send form JSON data to an endpoint like Getform.
-
-// MDN — FormData
-// https://developer.mozilla.org/en-US/docs/Web/API/FormData
-// → Used to easily create form data for submission via Fetch.
-
-// Note: In addition to the mentioned sources,
-// I also used code and ideas from my previous projects stored on my device (HTML, CSS, JS).
-// These projects were never published before, but they helped me speed up the work
-// and reuse some parts I had tried earlier.
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
