@@ -23,6 +23,7 @@
   </script>
 </head>
 <body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
   <a class="skip" href="#main" data-ar="انتقل إلى المحتوى">Skip to content</a>
 
   <header class="nav">
@@ -36,19 +37,21 @@
       <a href="#contact" data-ar="تواصل">Contact</a>
       <button class="theme-btn" id="lang" lang="ar">العربية</button>
       <button class="theme-btn" id="theme" data-ar="الوضع">Theme</button>
-      <a class="btn btn-small" href="assets/Bassam%20Alghamdi%20-%20Computer%20Science.pdf" download="Bassam_Alghamdi_CV.pdf" data-ar="تحميل السيرة الذاتية">Download CV</a>
+      <a class="btn btn-small" href="assets/Bassam_Alghamdi_CV.pdf" download data-ar="تحميل السيرة الذاتية">Download CV</a>
     </nav>
   </header>
 
   <main id="main">
     <section class="hero" id="top">
       <div class="hero-text">
+        <div class="avatar"><img src="assets/profile-placeholder.jpg" width="932" height="1280" alt="Portrait of Bassam Alghamdi" fetchpriority="high"></div>
         <p class="kicker" data-ar="جدة، المملكة العربية السعودية">Jeddah, Saudi Arabia</p>
+        <p class="role" aria-hidden="true"><span id="role">Automation Engineer</span></p>
         <h1 data-ar="أؤتمت إصدارات البرمجيات، وأبني التطبيقات وخطوط البيانات المحيطة بها.">I automate software releases and build the apps and data pipelines around them.</h1>
         <p class="lead" data-ar="مهندس أتمتة وخريج علوم حاسب. أنفّذ حاليًا تحديثات OTA لمركبات Lucid Motors. وقبل ذلك بنيت تقارير آلية في الخدمات الأرضية السعودية، ونموذجًا أوليًا لمساعد محادثة بالذكاء الاصطناعي في البنك الأهلي السعودي.">Automation Engineer and Computer Science graduate. Today I run OTA deployments for Lucid Motors vehicles; before that I built automated reporting at Saudi Ground Services and an AI chatbot prototype at Saudi National Bank.</p>
         <div class="cta">
           <a class="btn" href="#projects" data-ar="عرض المشاريع">View projects</a>
-          <a class="btn btn-ghost" href="assets/Bassam%20Alghamdi%20-%20Computer%20Science.pdf" download="Bassam_Alghamdi_CV.pdf" data-ar="تحميل السيرة الذاتية">Download CV</a>
+          <a class="btn btn-ghost" href="assets/Bassam_Alghamdi_CV.pdf" download data-ar="تحميل السيرة الذاتية">Download CV</a>
         </div>
       </div>
       <aside class="ota" dir="ltr" aria-label="Illustration of an OTA deployment run">
@@ -70,6 +73,12 @@
       <div class="about-grid">
         <p data-ar="خريج علوم الحاسب من جامعة جدة (2025)، وخريج معسكر هندسة البرمجيات من أكاديمية سعودي ديجيتال × جنرال أسمبلي (480 ساعة). أعمل حيث تلتقي هندسة البرمجيات بالبيانات والأتمتة: أبني أنظمة تعمل دون مراقبة مستمرة.">I'm a Computer Science graduate (University of Jeddah, 2025) and a Software Engineering bootcamp alumnus (Saudi Digital Academy × General Assembly, 480 hours). I work where software engineering, data and automation meet: building things that run without anyone watching them.</p>
         <p data-ar="يتركز عملي على تحويل رؤى الذكاء الاصطناعي والبيانات إلى تطبيقات مستقرة وقابلة للتوسع. أحمل شهادة مختص معتمد في إدارة البيانات (CDMP)، وأعمل بالعربية (لغتي الأم) والإنجليزية.">My focus is turning AI and data insights into stable, scalable applications. I hold the Certified Data Management Professional (CDMP) credential and work in Arabic (native) and English.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b data-to="480" data-suffix="h">480h</b><span data-ar="ساعة تدريب في معسكر هندسة البرمجيات">Software Engineering bootcamp hours</span></div>
+        <div class="stat"><b data-to="25" data-suffix="+">25+</b><span data-ar="نقطة REST API تم تطويرها">REST API endpoints built</span></div>
+        <div class="stat"><b data-to="15" data-suffix="+">15+</b><span data-ar="وحدة تحكم إلكترونية (ECU) تم ضبطها">ECUs configured</span></div>
+        <div class="stat"><b data-to="100" data-suffix="%">100%</b><span data-ar="نسبة نجاح تحديثات البرامج الثابتة">Firmware update success rate</span></div>
       </div>
     </section>
 
@@ -197,7 +206,8 @@
     </section>
   </main>
 
-  <footer><p><span data-ar="© بسام الغامدي">© Bassam Alghamdi</span> <span id="year">2026</span></p></footer>
+  <footer><p>© <span id="year">2026</span> <span data-ar="بسام الغامدي — صُنع بالكود 👾 والقهوة ☕">Bassam Alghamdi — Crafted with code 👾 and coffee ☕</span></p></footer>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
   <script src="scripts/app.js" defer></script>
 </body>
 </html>
